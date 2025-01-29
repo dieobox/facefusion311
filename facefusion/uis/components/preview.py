@@ -240,7 +240,7 @@ def process_preview_frame(reference_faces : FaceSet, source_face : Face, source_
 	target_vision_frame = resize_frame_resolution(target_vision_frame, (1024, 1024))
 	source_vision_frame = target_vision_frame.copy()
 	if analyse_frame(target_vision_frame):
-		return cv2.GaussianBlur(target_vision_frame, (99, 99), 0)
+		return False
 
 	for processor_module in get_processors_modules(state_manager.get_item('processors')):
 		logger.disable()
